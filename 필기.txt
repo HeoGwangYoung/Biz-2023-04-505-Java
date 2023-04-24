@@ -1,0 +1,52 @@
+md 파일내에 git init - initalize 초기화 명령어
+git add README.md : 지정파일내 폴더를 local repository에 압축하여 보관
+
+bash에 git init입력시 지정 폴더 내 .git 파일생성 삭제시 연동안되니 주의
+
+사용자 -> DBMS		local storage	(사용자 + DBMS+local stroage) => 스키마  사용자 입장 : 외부 스키마	 DBMS입장: 내부스키마	local storage입장:개념스키마
+Create, Select, Update, Delete
+
+SQL => schema query language 
+
+오라클에서는 RDBMS Relationship
+
+
+학생	과목	교수	=> 3개의 스키마
+학생 + 과목	=>	수강 스키마 생성
+
+git bash
+a, i 입력
+esc 후 :w
+wq
+
+
+위치 투명성
+데이터 무결성
+
+통신- 멀리떨어진 상대와 정보를 주고받는것 통신규약 - protocol
+layer - 인터넷 프로토콜 계층 ,프로토콜 계층간의 구조에 표준을 지켜야함
+투명성, 캡슐화 - 내부 프로토콜의 구조를 알지 못해도 데이터 통신간 지장이없음
+물(리)-데(이터)-네(트워크)-전(송)-세(션)-표(현)-응(용) - 레이어간의 구조
+
+네트워크 구성방법의  예시 ) star형(중앙네트워크장치), 100m 범위내에 들어있는 컴퓨터 네트워크 그룹 -> local area network (LAN)
+인터네트워킹장치 - repeater(항상 연결되어있음), bridge, router(gateway소프트웨어 포함) (router, gateway => 한가한 경로를 찾아 데이터를 전송시켜주는 역할)
+MAN - LAN(하나의 건물내의 네트워크)과 LAN이 연결되어 하나의 도시가됨
+Wide Area Network(WAN) - MAN과 MAN이 만나 국가
+internet - WAN과 WAN이만나 전세계
+
+최초의 프로토콜 Tcp/Ip -제 4레이어(전송)
+www(world wide web) Tcp/Ip 에 포함된 하나의 프로토콜 = http (hyper text transfer protocol)protocol + security => https
+
+데이터 베이스
+위치 투명성, 중복 최소화
+
+객체모델링
+Entity - ex) 학생정보entity(객체), 과목정보entitiy(객체)
+이러한 객체를 가지고 데이터를 모델링하는것을 rdms라고함
+
+ERP -> Enterprise Resource Plan(전사적 자원 관리) 회사전체에 있는 자원을 관리하는 시스템
+ERP에서의 첫단계 데이터모델링
+
+기획 설계 구현 테스트 배포 유지보수
+diagram (기획 -> 설계) - 1.개념적 모델 2.논리적 모델	drawio -> erdiagram(entity relationship diagram)
+학생정보에서 학번은 key : 식별자 ID (유일한 값 unique - primary key 약자로 PK)
