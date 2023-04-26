@@ -12,35 +12,17 @@ public class HomeWork {
 		for (int i = 0; i < scores.length; i++) {
 			scores[i] = new ScoreDto();
 		}
-
-		// °¢ °´Ã¼¿¡ ÇÐ¹ø°ú ÀÌ¸§ ÀúÀå
-		scores[0].stNum = "0001";
-		scores[0].stName = "È«±æµ¿";
-		scores[1].stNum = "0002";
-		scores[1].stName = "ÀÌ¸ù·æ";
-		scores[2].stNum = "0003";
-		scores[2].stName = "¼ºÃáÇâ";
-		scores[3].stNum = "0004";
-		scores[3].stName = "Àåº¸°í";
-		scores[4].stNum = "0005";
-		scores[4].stName = "ÀÓ²©Á¤";
-		scores[5].stNum = "0006";
-		scores[5].stName = "±èÃ¶¼ö";
-		scores[6].stNum = "0007";
-		scores[6].stName = "±èÈñ°æ";
-		scores[7].stNum = "0008";
-		scores[7].stName = "ÀÌ±âµ¿";
-		scores[8].stNum = "0009";
-		scores[8].stName = "¹ÚÃ¶¼ö";
-		scores[9].stNum = "0010";
-		scores[9].stName = "ÇÑµ¿ÈÄ";
-		
+		// ÀÌ¸§°ú ÇÐ¹øÀ» ´ãÀ» ¹è¿­ ¼±¾ð
+		String[] name = {"È«±æµ¿", "ÀÌ¸ù·æ", "¼ºÃáÇâ", "Àåº¸°í", "ÀÓ²©Á¤", "±èÃ¶¼ö", "±èÈñ°æ", "ÀÌ±âµ¿", "¹ÚÃ¶¼ö", "ÇÑµ¿ÈÄ"};
+		String[] num = {"0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010"};
 		int korTotal = 0;
 		int engTotal = 0;
 		int mathTotal = 0;
 		
-		// °¢ °´Ã¼¿¡ Á¡¼ö ÀúÀå ¹× ÃÑÇÕ °è»ê 
+		// °¢ °´Ã¼¿¡ µ¥ÀÌÅÍÀúÀå ¹× ÃÑÇÕ °è»ê 
 		for (int i = 0; i < scores.length; i++) {
+			scores[i].stName = name[i];
+			scores[i].stNum = num[i];
 			scores[i].scKor = (int) (Math.random() * 50) + 51;
 			scores[i].scEng = (int) (Math.random() * 50) + 51;
 			scores[i].scMath = (int) (Math.random() * 50) + 51;
