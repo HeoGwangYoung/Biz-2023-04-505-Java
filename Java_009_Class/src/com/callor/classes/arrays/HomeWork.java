@@ -60,7 +60,7 @@ public class HomeWork {
 			scoreService.scorePrint(scores[i]);
 		}
 		System.out.println("-".repeat(70));
-		scoreService.scoreTotalPrint(korTotal, engTotal, mathTotal, 10);
+		scoreService.scoreTotalPrint(korTotal, engTotal, mathTotal, scores.length);
 		System.out.println("=".repeat(70));
 	}
 
