@@ -15,7 +15,7 @@ public class Java_OneDay_001_Score {
 		// ScoreService클래스 메서드를 사용하기 위해 서비스 객체 생성
 		ScoreService serv = new ScoreService();
 		
-		// 점수 생성
+		// 점수 생성 (반드시 출력전에 호출해줘야함)
 		serv.stInfoInitalize(scores);
 		serv.Totalset(scores);
 		
