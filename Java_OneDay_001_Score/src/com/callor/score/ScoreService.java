@@ -43,13 +43,13 @@ public class ScoreService {
 		System.out.println("=".repeat(70));
 		System.out.println("* 한울 고교 성적 리스트 *");
 		System.out.println("=".repeat(70));
-		System.out.printf("학번\t\t  국어\t  영어\t  수학\t  음악\t  미술\t 총점\t평균\n");
+		System.out.print("학번\t국어\t영어\t수학\t음악\t미술\t총점\t평균\n");
 		System.out.println("-".repeat(70));
 	}
 	// 매개변수로 배열을 받아와서 배열요소의 인스턴스 정보들을 출력해주는 메서드
 	public void printStScore(ScoreDto[] score) {
 		for (int i = 0; i < score.length; i++) {
-			System.out.printf("%s\t\t%5d\t%5d\t%5d\t%5d\t%5d\t%5d\t%.2f\n",
+			System.out.printf("%s\t%5d\t%5d\t%5d\t%5d\t%5d\t%5d\t%.2f\n",
 					score[i].stNum, score[i].stKorSc, score[i].stEngSc,
 					score[i].stMthSc, score[i].stMusSc, score[i].stArtSc,
 					score[i].getStTotal(), score[i].getStAvg());
@@ -64,7 +64,7 @@ public class ScoreService {
 				this.korTotal, this.engTotal, this.mthTotal, 
 				this.musTotal, this.artTotal, this.totalofTotal);
 		System.out.println();
-		System.out.printf("평균\t\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t\t%.2f\n", 
+		System.out.printf("평균\t\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t\t%5.2f\n", 
 				(float)korTotal / score.length, (float)engTotal / score.length, (float)mthTotal / score.length, 
 				(float)musTotal / score.length, (float)artTotal / score.length, totalofAvg / score.length);
 		System.out.println("=".repeat(70));

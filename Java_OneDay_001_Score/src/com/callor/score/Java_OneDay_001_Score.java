@@ -25,3 +25,4 @@ public class Java_OneDay_001_Score {
 		serv.printTotal(scores);
 	}
 }
+
