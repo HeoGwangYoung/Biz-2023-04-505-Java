@@ -17,9 +17,14 @@ public class ClassH {
 			if (str.equals("-")) {
 				break;
 			}
-			num1 = Integer.parseInt(scan.nextLine());
+			num1 = Integer.parseInt(str);
+			
 			System.out.print("Á¤¼ö 2 >> ");
-			num2 = scan.nextInt();
+			str = scan.nextLine();
+			if (str.equals("-")) {
+				break;
+			}
+			num2 = Integer.parseInt(str);
 			
 			System.out.printf("%d + %d = %d\n", num1, num2, num1 + num2);
 			System.out.printf("%d - %d = %d\n", num1, num2, num1 - num2);
