@@ -46,7 +46,7 @@ public class ScoreServiceImplV3 implements ScoreService{
 		service.loadStudent();
 
 		System.out.println("=".repeat(70));
-		System.out.println("학번\t이름\t\t학과\t국어\t영어\t수학\t음악\t미술");
+		System.out.println("학번\t이름\t학과\t\t국어\t영어\t수학\t음악\t미술");
 		System.out.println("-".repeat(70));
 		for (ScoreDto scoreDto : scList) {
 			StudentDto stDto = service.getStudent(scoreDto.getStNum());
