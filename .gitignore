@@ -19,6 +19,7 @@ hs_err_pid*
 /.idea/
 /spring.iml
 build/
+*.iml
 
 # eclipse project folder
 .metadata/
@@ -144,3 +145,5 @@ typings/
 
 # ETC
 .bak
+/.vs/
+

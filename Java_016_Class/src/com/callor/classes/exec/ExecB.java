@@ -21,10 +21,10 @@ public class ExecB {
 
 		// StudentDto 클래스를 사용하여 생성한 홍길동, 이몽룡, 성춘향 객체변수는
 		// 서로간에 데이터 간섭이 없는 완전 독립된 변수이다
-		StudentDto 홍길동 = new StudentDto();
-		홍길동.stName = "홍길동";
-		
-		StudentDto 이몽룡 = new StudentDto();
-		StudentDto 성춘향 = new StudentDto();
+//		StudentDto 홍길동 = new StudentDto();
+//		홍길동.stName = "홍길동";
+//
+//		StudentDto 이몽룡 = new StudentDto();
+//		StudentDto 성춘향 = new StudentDto();
 	}
 }

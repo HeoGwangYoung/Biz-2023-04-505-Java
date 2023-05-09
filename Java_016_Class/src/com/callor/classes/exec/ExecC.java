@@ -33,14 +33,14 @@ public class ExecC {
 		System.out.println(stdList.get(0).stName);
 		
 		// stdList의 index 0 데이터(학생객체 데이터)를 get(읽기)하여 홍길동 객체변수에 복사하기
-		StudentDto 홍길동 = stdList.get(0);
-		System.out.println(홍길동.toString());
-		System.out.println(홍길동.stName);
-		System.out.println(stdList.get(0).stName);
-		
-		StudentDto 성춘향 = stdList.get(1);
-		System.out.println(성춘향.toString());
-		System.out.println(성춘향.stName);
+//		StudentDto 홍길동 = stdList.get(0);
+//		System.out.println(홍길동.toString());
+//		System.out.println(홍길동.stName);
+//		System.out.println(stdList.get(0).stName);
+//
+//		StudentDto 성춘향 = stdList.get(1);
+//		System.out.println(성춘향.toString());
+//		System.out.println(성춘향.stName);
 		/*
 		 * stList에서 .get(1)을 실행하는 순간 stList 에 저장된 데이터 중에서 index 1의 데이터가 객체로 변환된다
 		 * stList.get(1) 은 stdList 의 index 1 의 객체데이터다
