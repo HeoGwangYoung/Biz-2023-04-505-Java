@@ -13,6 +13,8 @@ public class StudentServiceImplV1 implements StudentService {
 	protected List<StudentDto> stList;
 	protected Scanner scan;
 
+	static int indexCount = 0;
+
 	public StudentServiceImplV1() {
 		stList = new ArrayList<>();
 		scan = new Scanner(System.in);
@@ -25,23 +27,43 @@ public class StudentServiceImplV1 implements StudentService {
 	 */
 	public void insertStudent() {
 		while (true) {
-			System.out.println(Line.dLIne(60));
-			System.out.println("학생정보 추가 (종료하려면 QUIT 입력)");
-			System.out.println(Line.sLIne(60));
+			System.out.println(Line.dLIne(100));
+			System.out.println("학생정보 입력 (종료하려면 QUIT 입력)");
+			System.out.println(Line.sLIne(100));
 
-			System.out.print("학번 >> ");
-			String stNum = scan.nextLine();
+			String stNum = "";
+			int intNum = 0;
+
+			StudentDto localStDto = null;
+
+			while (true) {
+				System.out.print("학번(정수) >> ");
+				stNum = scan.nextLine();
+				if (stNum.equals("QUIT")) {
+					break;
+				}
+				try {
+					intNum = Integer.valueOf(stNum);
+				} catch (Exception e) {
+					System.out.println("학번은 정수로 입력하세요");
+					continue;
+				}
+
+				localStDto = returnDupDto(intNum);
+
+				break;
+			}
 			if (stNum.equals("QUIT")) {
 				break;
 			}
 
-			System.out.print("이름 >> ");
+			System.out.printf("이름(%s) >> ", localStDto.stName == null ? "신규" : localStDto.stName);
 			String stName = scan.nextLine();
 			if (stName.equals("QUIT")) {
 				break;
 			}
 
-			System.out.print("학과 >> ");
+			System.out.printf("학과(%s) >> ", localStDto.stDept == null ? "신규" : localStDto.stDept);
 			String stDept = scan.nextLine();
 			if (stDept.equals("QUIT")) {
 				break;
@@ -49,49 +71,54 @@ public class StudentServiceImplV1 implements StudentService {
 
 			int StGrade = 0;
 			while (true) {
-				System.out.print("학년 >> ");
+				System.out.printf("학년(%s) >> ", localStDto.stGrade == 0 ? "신규" : localStDto.stGrade);
 				String StrStGrade = scan.nextLine();
 				if (StrStGrade.equals("QUIT")) {
 					break;
 				}
-				
+
 				try {
 					StGrade = Integer.valueOf(StrStGrade);
 				} catch (Exception e) {
 					System.out.println("잘못된 입력입니다 1 ~ 4 의 정수를 입력해 주세요");
 					continue;
 				}
-				if(StGrade < 1 || StGrade > 4) {
+				if (StGrade < 1 || StGrade > 4) {
 					System.out.println("1 ~ 4 의 범위를 벗어났습니다");
 					continue;
 				}
 				break;
 			}
-			if(StGrade == 0) {
+			if (StGrade == 0) {
 				break;
 			}
-			
-			System.out.print("전화번호 >> ");
+
+			System.out.printf("전화번호(%s) >> ", localStDto.stTel == null ? "신규" : localStDto.stTel);
 			String stTel = scan.nextLine();
 			if (stNum.equals("QUIT")) {
 				break;
 			}
 
 			StudentDto stDto = new StudentDto();
-			stDto.stNum = stNum;
+
+			stDto.stNum = String.format("%04d", intNum);
 			stDto.stName = stName;
 			stDto.stDept = stDept;
 			stDto.stGrade = StGrade;
 			stDto.stTel = stTel;
 
-			stList.add(stDto);
+			if (localStDto.stName != null) {
+				stList.set(indexCount, stDto);
+			} else {
+				stList.add(stDto);
+			}
+
 		} // end while
 		System.out.println("학생정보 입력 종료");
 	}
 
 	@Override
 	public void loadStudent() {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -128,5 +155,22 @@ public class StudentServiceImplV1 implements StudentService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	protected StudentDto returnDupDto(int intNum) {
+
+		StudentDto stdto = new StudentDto();
+		indexCount = 0;
+
+		for (StudentDto studentDto : stList) {
+			if (studentDto.stNum.equals(String.format("%04d", intNum))) {
+				return studentDto;
+			}
+			indexCount++;
+		}
+
+		return stdto;
+	}
+
+	// TODO Auto-generated method stub
 
 }
