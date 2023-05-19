@@ -55,7 +55,14 @@ public class BuyerServiceImplV1 implements BuyerService {
 
 	@Override
 	public BuyerDto getBuyer(String buId) {
-		// TODO Auto-generated method stub
+		if(buyerList.isEmpty()) {
+			loadBuyer();
+		}
+		for (BuyerDto buyerDto : buyerList) {
+			if(buyerDto.buId.equals(buId)) {
+				return buyerDto;
+			}
+		}
 		return null;
 	}
 
