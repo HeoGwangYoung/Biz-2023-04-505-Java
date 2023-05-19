@@ -37,9 +37,13 @@ public class AccServiceImplV1 implements AccService {
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat todayFormat = new SimpleDateFormat("YYYY-MM-dd");
 		String todayString = todayFormat.format(date);
-
+		
+		
 		int maxNum = 0;
 		String numBank = "1000";
+		
+		
+		//리스트 비어있을경우 건너뜀
 		for (AccDto accDto : accList) {
 			// 1000-2023-05-18-0001
 			// 1000-2023-05-18-0002
@@ -47,18 +51,33 @@ public class AccServiceImplV1 implements AccService {
 			// 1000-2023-05-18-0004
 			// 1000-2023-05-18-0005
 			String accNum = accDto.acNum;
+			
+			// test code
+			System.out.println("들어온 데이터 : " + accNum);
 
 			// 처음의 4글자를 잘라서 bank 코드 추출하기
 			numBank = accNum.substring(0, 4);
 
 			// 날짜 부분 추출하기
-			String numDate = accNum.substring(4, todayString.length());
+			String numDate = accNum.substring(numBank.length(), numBank.length() + todayString.length());
+			
+			//test code
+			System.out.println("numDate : " + numDate);
 
 			if (numDate != null && numDate.equals(todayString)) {
 				// 일련번호 부분만 추출하기
 				String strLastNum = accNum.substring(numBank.length() + todayString.length());
+				
+				System.out.println("numBank 길이 :" + numBank.length()); // 4
+				System.out.println("todayString 길이 :" + todayString.length()); // 10
+				
+				
+				//test code
+				System.out.println("LastNum : " + strLastNum);
+				
+				
 				int lastNum = Integer.valueOf(strLastNum);
-				if (maxNum > lastNum)
+				if (maxNum < lastNum)
 					maxNum = lastNum;
 			}
 		} // end for
@@ -98,6 +117,17 @@ public class AccServiceImplV1 implements AccService {
 						System.out.println(Line.sLine(100));
 						System.out.println(buyerDto.toString());
 						System.out.println(Line.sLine(100));
+						
+						// 0519 작성
+						AccDto accDto = new AccDto();
+						accDto.acNum = accNum;
+						accDto.buId = buyerDto.buId;
+						accDto.acBalance = 0;
+						accDto.acDiv = "계좌구분";
+						accList.add(accDto);
+						System.out.println("계좌를 해당고객에게 발급합니다");
+						
+						break;
 					}
 					
 				} catch (Exception e) {
