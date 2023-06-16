@@ -16,7 +16,7 @@ public class BusAPI {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getSuberbsBusTrminlList"); /* URL */
 		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")
-				+ "=mgexvXSt9VjqiKmMfwOazwA5Und8vf3wnSTcXCZ0Vkdl%2BcoP%2BEdOYbLL55ZGHDViw07gNQYFWUIEgVTNQ57QCg%3D%3D"); /*
+				+ ""); /*
 																														 * Service
 																														 * Key
 																														 */

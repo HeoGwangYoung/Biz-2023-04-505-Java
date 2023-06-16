@@ -1,4 +1,4 @@
-package com.bus.api.search.Terminal;
+package com.bus.api.example;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,23 +13,18 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class SearchTerminal {
+import com.bus.api.search.Terminal.TerminalDto;
 
-	public static void main(String[] args) throws IOException {
+public class Test_SearchGwangju_Terminal {
+
+	public List<TerminalDto> goURL_SearchTerminal() throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getSuberbsBusTrminlList"); /* URL */
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")
-				+ "");/* 서비스 키 */
-		urlBuilder
-				.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지번호 */
-		urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "="
-				+ URLEncoder.encode("10", "UTF-8")); /* 한 페이지 결과 수 */
-		urlBuilder.append("&" + URLEncoder.encode("_type", "UTF-8") + "="
-				+ URLEncoder.encode("json", "UTF-8")); /* 데이터 타입(xml, json) */
-//		urlBuilder.append(
-//				"&" + URLEncoder.encode("terminalNm", "UTF-8") + "=" + URLEncoder.encode("서울남부", "UTF-8")); /* 터미널명 */
-		urlBuilder.append("&" + URLEncoder.encode("cityCode", "UTF-8") + "="
-				+ URLEncoder.encode("24", "UTF-8")); /* 도시코드 24 = 광주 광역시 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "");
+		urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지번호 */
+		urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("3000", "UTF-8")); /* 한 페이지 결과 수 */
+		urlBuilder.append("&" + URLEncoder.encode("_type", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /* 데이터 타입(xml, json) */
+		urlBuilder.append("&" + URLEncoder.encode("cityCode", "UTF-8") + "="+ URLEncoder.encode("24", "UTF-8"));
 		URL url = new URL(urlBuilder.toString());
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("GET");
@@ -50,7 +45,6 @@ public class SearchTerminal {
 		conn.disconnect();
 
 		String data = sb.toString();
-		System.out.println(data);
 
 		try {
 			JSONParser parser = new JSONParser();
@@ -77,17 +71,10 @@ public class SearchTerminal {
 				terList.add(dto);
 			}
 
-			for (TerminalDto terminalDto : terList) {
-				System.out.println("도시이름 : " + terminalDto.cityName);
-				System.out.println("터미널id : " + terminalDto.terminalId);
-				System.out.println("터미널이름 : " + terminalDto.terminalNm);
-				System.out.println();
-			}
+			return terList;
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			return null;
 		}
-
 	}
-
 }

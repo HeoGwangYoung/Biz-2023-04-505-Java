@@ -1,4 +1,4 @@
-package com.bus.api.search.Terminal;
+package com.bus.api.testTerminal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class SearchTerminal {
+import com.bus.api.search.Terminal.TerminalDto;
+
+public class testTermainalV1 {
 
 	public static void main(String[] args) throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
@@ -23,7 +25,7 @@ public class SearchTerminal {
 		urlBuilder
 				.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지번호 */
 		urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "="
-				+ URLEncoder.encode("10", "UTF-8")); /* 한 페이지 결과 수 */
+				+ URLEncoder.encode("30", "UTF-8")); /* 한 페이지 결과 수 */
 		urlBuilder.append("&" + URLEncoder.encode("_type", "UTF-8") + "="
 				+ URLEncoder.encode("json", "UTF-8")); /* 데이터 타입(xml, json) */
 //		urlBuilder.append(
@@ -89,5 +91,4 @@ public class SearchTerminal {
 		}
 
 	}
-
 }
