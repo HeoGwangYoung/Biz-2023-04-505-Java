@@ -130,7 +130,7 @@ public class Test_findDummy_Terminal {
 			
 		} catch (Exception e) {
 			
-			System.out.println(depDto.terminalNm +" 은               더미 데이터 입니다");
+//			System.out.println(depDto.terminalNm +" 은               더미 데이터 입니다");
 			return null;
 		}
 	}

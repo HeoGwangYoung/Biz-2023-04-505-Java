@@ -19,15 +19,17 @@ public class Exec_findDummy {
 		try {
 			terList = loadserv.goURL_SearchTerminal();
 			for (TerminalDto terdto : terList) {
+				int count = 0;
 				for (TerminalDto terdtoarr : terList) {
 					busList = findserv.goURL_SearchTerminal(terdto, terdtoarr, "20230616");
 					
 					if(busList != null) {
 						busListAll.add(busList);
+						count ++;
 					} 
 				}
 				
-				System.out.println(terdto.terminalNm + " 에 연결된 정류소" + busListAll.size());
+				System.out.println(terdto.terminalNm + " 에 연결된 정류소" + count);
 			}
 			
 			

@@ -7,5 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/KMS5050010/Downloads/devTools/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KMS5050010/Downloads/devTools/mybatis-3.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KMS5050010/Downloads/devTools/ojdbc8-23.2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
