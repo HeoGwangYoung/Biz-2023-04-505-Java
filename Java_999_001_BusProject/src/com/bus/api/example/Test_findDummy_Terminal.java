@@ -31,7 +31,7 @@ public class Test_findDummy_Terminal {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getStrtpntAlocFndSuberbsBusInfo"); /* URL */
 		
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + ""); /* 서비스 키 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=57j0OF8PJ75oTqWditc%2Be4vaigu%2BJBAlFoFOuq2x6B3LqcQ4Gl6ITC8QumWD%2Fh3nI8g277R9fRMFcN%2BFWnYeSQ%3D%3D"); /* 서비스 키 */
 		
 		urlBuilder.append("&" + URLEncoder.encode("depTerminalId", "UTF-8") + "=" + URLEncoder.encode(depDto.terminalId, "UTF-8"));/* 출발 정류장 */
 		
@@ -65,7 +65,6 @@ public class Test_findDummy_Terminal {
 		conn.disconnect();
 
 		String data = sb.toString();
-//		System.out.println(data);
 		
 		List<BusDto> busList = new ArrayList<>();
 		
@@ -125,38 +124,12 @@ public class Test_findDummy_Terminal {
 				busList.add(dto);
 			}
 			
-//			System.out.println("성공");
-
-			
-			
-//			for (int i = 0; i < item.size(); i++) {
-//				JSONObject obj = item;
-//				String arrPlaceNm = obj.get("arrPlaceNm")+"";
-//				String routeId = obj.get("routeId")+"";
-//				String depPlaceNm = obj.get("depPlaceNm")+"";
-//				String gradeNm = obj.get("gradeNm")+"";
-//				String arrPlandTime = obj.get("arrPlandTime")+"";
-//				String depPlandTime = obj.get("depPlandTime")+"";
-//				String charge = obj.get("charge")+"";
-//				
-//				BusDto dto = new BusDto();
-//				dto.arrPlaceNm = arrPlaceNm;
-//				dto.arrPlandTime = arrPlandTime;
-//				dto.charge = charge;
-//				dto.depPlaceNm = depPlaceNm;
-//				dto.depPlandTime = depPlandTime;
-//				dto.gradeNm = gradeNm;
-//				dto.routeId = routeId;
-//				
-//				busList.add(dto);
-//			}
 			System.err.println(depDto.terminalNm +"	과		"+ arrDto.terminalNm + " 		는 연결되있습니다");
 			System.err.println(depDto.terminalNm + " 에 데이터 추가중입니다");
 			return busList;
 			
 		} catch (Exception e) {
-//			System.out.println(depDto.terminalNm +"		과		"+ arrDto.terminalNm + " 는 연결되있지않습니다" );
-//			System.out.println(depDto.terminalNm +"		과		"+ arrDto.terminalNm + " 는 연결되있지않습니다" + depDto.terminalId + arrDto.terminalId);
+			
 			System.out.println(depDto.terminalNm +" 은               더미 데이터 입니다");
 			return null;
 		}
