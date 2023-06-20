@@ -90,13 +90,14 @@ public class Test_findDummy_Terminal {
 					String charge = item.get("charge")+"";
 					
 					BusDto dto = new BusDto();
-					dto.arrPlaceNm = arrPlaceNm;
-					dto.arrPlandTime = arrPlandTime;
-					dto.charge = charge;
 					dto.depPlaceNm = depPlaceNm;
 					dto.depPlandTime = depPlandTime;
+					dto.depTerminalId = depDto.terminalId;
+					dto.arrPlaceNm = arrPlaceNm;
+					dto.arrPlandTime = arrPlandTime;
+					dto.arrTerminalId = arrDto.terminalId;
+					dto.charge = charge;
 					dto.gradeNm = gradeNm;
-					dto.routeId = routeId;
 					
 					busList.add(dto);
 			    }
@@ -113,13 +114,14 @@ public class Test_findDummy_Terminal {
 				String charge = item.get("charge")+"";
 				
 				BusDto dto = new BusDto();
-				dto.arrPlaceNm = arrPlaceNm;
-				dto.arrPlandTime = arrPlandTime;
-				dto.charge = charge;
 				dto.depPlaceNm = depPlaceNm;
 				dto.depPlandTime = depPlandTime;
+				dto.depTerminalId = depDto.terminalId;
+				dto.arrPlaceNm = arrPlaceNm;
+				dto.arrPlandTime = arrPlandTime;
+				dto.arrTerminalId = arrDto.terminalId;
+				dto.charge = charge;
 				dto.gradeNm = gradeNm;
-				dto.routeId = routeId;
 				
 				busList.add(dto);
 			}
@@ -130,7 +132,6 @@ public class Test_findDummy_Terminal {
 			
 		} catch (Exception e) {
 			
-//			System.out.println(depDto.terminalNm +" 은               더미 데이터 입니다");
 			return null;
 		}
 	}

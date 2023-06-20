@@ -27,6 +27,8 @@ public class DBContract {
 			public static final int BSARRNM = 6;
 			public static final int BSARRPLANEDTM = 7;
 			public static final int CHARGE = 8;
+			public static final int GRADENM = 9;
 		}
+
 	}
 }

@@ -49,7 +49,7 @@ public class DBConnection {
 		// Dao인터페이스가 저장된 pakage를 등록한다
 		// Dao인터페이스를 개별적으로 등록할수도있지만
 		// 여기에서는 package를 통째로 등록한다
-		configuration.addMappers("com.callor.buslist.persistance");
+		configuration.addMappers("com.bus.persistance");
 		
 		// SessionFactoy 생성하기
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);

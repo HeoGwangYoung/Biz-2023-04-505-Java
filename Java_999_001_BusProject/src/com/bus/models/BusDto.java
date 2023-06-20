@@ -10,20 +10,18 @@ public class BusDto {
 	//<gradeNm>일반</gradeNm>
 	//<routeId>NAI201602010040329</routeId>
 
-	public String arrPlaceNm;
-	public String arrPlandTime;
-	public String charge;
+	public String depTerminalId;
 	public String depPlaceNm;
 	public String depPlandTime;
-	public String gradeNm;
-	public String routeId;
 	
-	@Override
-	public String toString() {
-		return "BusDto [arrPlaceNm=" + arrPlaceNm + ", arrPlandTime=" + arrPlandTime + ", charge=" + charge
-				+ ", depPlaceNm=" + depPlaceNm + ", depPlandTime=" + depPlandTime + ", gradeNm=" + gradeNm
-				+ ", routeId=" + routeId + "]";
-	}
+	public String arrTerminalId;
+	public String arrPlaceNm;
+	public String arrPlandTime;
+	
+	public String charge;
+	public String gradeNm;
+	
+	
 }
 
 
