@@ -13,7 +13,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.bus.api.search.Terminal.TerminalDto;
+import com.bus.models.TerminalDto;
 
 public class testTermainalV1 {
 

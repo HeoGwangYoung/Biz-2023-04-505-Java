@@ -1,10 +1,11 @@
-package com.bus.api.example;
+package com.bus.exec;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bus.api.search.Terminal.TerminalDto;
+import com.bus.models.TerminalDto;
+import com.bus.service.api.Test_SearchAll_Terminal;
 
 public class Exec {
 	public static void main(String[] args) {

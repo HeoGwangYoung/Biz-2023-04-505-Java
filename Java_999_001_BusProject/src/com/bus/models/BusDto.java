@@ -1,4 +1,4 @@
-package com.bus.api.search.Terminal;
+package com.bus.models;
 
 public class BusDto {
 
@@ -17,4 +17,13 @@ public class BusDto {
 	public String depPlandTime;
 	public String gradeNm;
 	public String routeId;
+	
+	@Override
+	public String toString() {
+		return "BusDto [arrPlaceNm=" + arrPlaceNm + ", arrPlandTime=" + arrPlandTime + ", charge=" + charge
+				+ ", depPlaceNm=" + depPlaceNm + ", depPlandTime=" + depPlandTime + ", gradeNm=" + gradeNm
+				+ ", routeId=" + routeId + "]";
+	}
 }
+
+

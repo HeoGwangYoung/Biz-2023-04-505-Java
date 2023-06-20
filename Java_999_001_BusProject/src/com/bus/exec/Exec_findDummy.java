@@ -1,11 +1,13 @@
-package com.bus.api.example;
+package com.bus.exec;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bus.api.search.Terminal.BusDto;
-import com.bus.api.search.Terminal.TerminalDto;
+import com.bus.models.BusDto;
+import com.bus.models.TerminalDto;
+import com.bus.service.api.Test_SearchGwangju_Terminal;
+import com.bus.service.api.Test_findDummy_Terminal;
 
 public class Exec_findDummy {
 

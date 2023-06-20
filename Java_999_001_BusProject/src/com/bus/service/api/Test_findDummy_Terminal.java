@@ -1,4 +1,4 @@
-package com.bus.api.example;
+package com.bus.service.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,8 +13,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.bus.api.search.Terminal.BusDto;
-import com.bus.api.search.Terminal.TerminalDto;
+import com.bus.models.BusDto;
+import com.bus.models.TerminalDto;
 
 /*
  * http://apis.data.go.kr/1613000/SuburbsBusInfoService/getStrtpntAlocFndSuberbsBusInfo
