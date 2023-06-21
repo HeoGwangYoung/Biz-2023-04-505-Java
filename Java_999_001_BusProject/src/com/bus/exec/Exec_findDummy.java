@@ -42,7 +42,7 @@ public class Exec_findDummy {
 				System.out.println(depTerdto.terminalNm + " 에 연결된 정류장 찾는중 ");
 				for (TerminalDto arrTerdto : gwangju_TerList) {
 					findIndex ++;
-					busList = findserv.goURL_SearchTerminal(depTerdto, arrTerdto, "20230616");
+					busList = findserv.goURL_SearchTerminal(depTerdto, arrTerdto, "20230620");
 					System.out.println("찾는 중" + findIndex);
 					if(busList != null) {
 						count ++;
