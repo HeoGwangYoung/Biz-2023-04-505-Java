@@ -15,10 +15,6 @@ import com.bus.service.api.Test_findDummy_Terminal;
 
 public class Exec_findDummy {
 
-	
-	
-	
-	
 	public static void main(String[] args) {
 		
 		SqlSession session = DBConnection.getSessionFactory().openSession(true);
