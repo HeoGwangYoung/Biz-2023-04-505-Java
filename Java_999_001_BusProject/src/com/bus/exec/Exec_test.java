@@ -6,26 +6,26 @@ import java.util.List;
 
 import com.bus.models.BusDto;
 import com.bus.models.TerminalDto;
-import com.bus.service.api.Test_findDummy_Terminal;
+import com.bus.service.api.Test_findDummy_Bus;
 
 public class Exec_test {
 
 	public static void main(String[] args) {
-		Test_findDummy_Terminal findserv = new Test_findDummy_Terminal();
+		Test_findDummy_Bus findserv = new Test_findDummy_Bus();
 		
 		TerminalDto depDto = new TerminalDto();
 		depDto.cityName = null;
-		depDto.terminalId = "NAI6193701";
-		depDto.terminalNm = "유스퀘어";
+		depDto.terminalId = "NAI6119902";
+		depDto.terminalNm = "문화동";
 		
 		TerminalDto arrDto = new TerminalDto();
 		arrDto.cityName = null;
-		arrDto.terminalId = "NAI6119201";
-		arrDto.terminalNm = "우산동";
+		arrDto.terminalId = "NAI5603501";
+		arrDto.terminalNm = "순창";
 
 		List<BusDto> busList = new ArrayList<>();
 		try {
-			busList = findserv.goURL_SearchTerminal(depDto, arrDto, "20230616");
+			busList = findserv.goURL_SearchTerminal(depDto, arrDto, "20230626");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

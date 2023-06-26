@@ -14,7 +14,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.bus.models.BusDto;
-import com.bus.models.TerLinkDto;
 import com.bus.models.TerminalDto;
 
 /*
@@ -26,13 +25,13 @@ import com.bus.models.TerminalDto;
  * &numOfRows=100&pageNo=1
  * &_type=json
  */
-public class Test_findDummy_Terminal {
+public class Test_findDummy_Bus {
 
-	public List<TerLinkDto> goURL_SearchTerminal(TerminalDto depDto, TerminalDto arrDto, String time) throws IOException {
+	public List<BusDto> goURL_SearchTerminal(TerminalDto depDto, TerminalDto arrDto, String time) throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getStrtpntAlocFndSuberbsBusInfo"); /* URL */
 		
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "서비스키 입력"); /* 서비스 키 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=57j0OF8PJ75oTqWditc%2Be4vaigu%2BJBAlFoFOuq2x6B3LqcQ4Gl6ITC8QumWD%2Fh3nI8g277R9fRMFcN%2BFWnYeSQ%3D%3D"); /* 서비스 키 */
 		
 		urlBuilder.append("&" + URLEncoder.encode("depTerminalId", "UTF-8") + "=" + URLEncoder.encode(depDto.terminalId, "UTF-8"));/* 출발 정류장 */
 		
@@ -50,7 +49,7 @@ public class Test_findDummy_Terminal {
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("GET");
 		conn.setRequestProperty("Content-type", "application/json");
-		System.out.println("Response code: " + conn.getResponseCode());
+//		System.out.println("Response code: " + conn.getResponseCode());
 		BufferedReader rd;
 		if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
 			rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -67,12 +66,11 @@ public class Test_findDummy_Terminal {
 
 		String data = sb.toString();
 		
-		List<TerLinkDto> linkTerList = new ArrayList<>();
+		List<BusDto> busList = new ArrayList<>();
 		
 		try {
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObject = (JSONObject) parser.parse(data);
-			System.out.println("연결 성공");
 			JSONObject response = (JSONObject) jsonObject.get("response");
 			JSONObject body = (JSONObject) response.get("body");
 			JSONObject items = (JSONObject) body.get("items");
@@ -84,35 +82,53 @@ public class Test_findDummy_Terminal {
 			        JSONObject item = (JSONObject) obj;
 			        // item 처리
 			        String arrPlaceNm = item.get("arrPlaceNm")+"";
+					String routeId = item.get("routeId")+"";
 					String depPlaceNm = item.get("depPlaceNm")+"";
+					String gradeNm = item.get("gradeNm")+"";
+					String arrPlandTime = item.get("arrPlandTime")+"";
+					String depPlandTime = item.get("depPlandTime")+"";
+					String charge = item.get("charge")+"";
 					
-					TerLinkDto dto = new TerLinkDto();
-					dto.depTerID = depDto.terminalId;
-					dto.depTerNM = depPlaceNm;
-					dto.arrTerID = arrDto.terminalId;
-					dto.arrTerNM = arrPlaceNm;
+					BusDto dto = new BusDto();
+					dto.depPlaceNm = depPlaceNm;
+					dto.depPlandTime = depPlandTime;
+					dto.depTerminalId = depDto.terminalId;
+					dto.arrPlaceNm = arrPlaceNm;
+					dto.arrPlandTime = arrPlandTime;
+					dto.arrTerminalId = arrDto.terminalId;
+					dto.charge = charge;
+					dto.gradeNm = gradeNm;
 					
-					linkTerList.add(dto);
+					busList.add(dto);
 			    }
 			} else if (items.get("item") instanceof JSONObject) {
 			    JSONObject item = (JSONObject) items.get("item");
 			    // item이 JSONObject인 경우 처리
 			    // item 처리
 			    String arrPlaceNm = item.get("arrPlaceNm")+"";
+				String routeId = item.get("routeId")+"";
 				String depPlaceNm = item.get("depPlaceNm")+"";
+				String gradeNm = item.get("gradeNm")+"";
+				String arrPlandTime = item.get("arrPlandTime")+"";
+				String depPlandTime = item.get("depPlandTime")+"";
+				String charge = item.get("charge")+"";
 				
-				TerLinkDto dto = new TerLinkDto();
-				dto.depTerID = depDto.terminalId;
-				dto.depTerNM = depPlaceNm;
-				dto.arrTerID = arrDto.terminalId;
-				dto.arrTerNM = arrPlaceNm;
+				BusDto dto = new BusDto();
+				dto.depPlaceNm = depPlaceNm;
+				dto.depPlandTime = depPlandTime;
+				dto.depTerminalId = depDto.terminalId;
+				dto.arrPlaceNm = arrPlaceNm;
+				dto.arrPlandTime = arrPlandTime;
+				dto.arrTerminalId = arrDto.terminalId;
+				dto.charge = charge;
+				dto.gradeNm = gradeNm;
 				
-				linkTerList.add(dto);
+				busList.add(dto);
 			}
 			
 			System.err.println(depDto.terminalNm +"	과		"+ arrDto.terminalNm + " 		는 연결되있습니다");
 			System.err.println(depDto.terminalNm + " 에 데이터 추가중입니다");
-			return linkTerList;
+			return busList;
 			
 		} catch (Exception e) {
 			
