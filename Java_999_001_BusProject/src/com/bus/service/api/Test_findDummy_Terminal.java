@@ -32,7 +32,7 @@ public class Test_findDummy_Terminal {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getStrtpntAlocFndSuberbsBusInfo"); /* URL */
 		
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "서비스키 입력"); /* 서비스 키 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + ""); /* 서비스 키 */
 		
 		urlBuilder.append("&" + URLEncoder.encode("depTerminalId", "UTF-8") + "=" + URLEncoder.encode(depDto.terminalId, "UTF-8"));/* 출발 정류장 */
 		

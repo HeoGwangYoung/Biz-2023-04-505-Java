@@ -31,7 +31,7 @@ public class Test_findDummy_Bus {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getStrtpntAlocFndSuberbsBusInfo"); /* URL */
 		
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=57j0OF8PJ75oTqWditc%2Be4vaigu%2BJBAlFoFOuq2x6B3LqcQ4Gl6ITC8QumWD%2Fh3nI8g277R9fRMFcN%2BFWnYeSQ%3D%3D"); /* 서비스 키 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "서비스키 입력"); /* 서비스 키 */
 		
 		urlBuilder.append("&" + URLEncoder.encode("depTerminalId", "UTF-8") + "=" + URLEncoder.encode(depDto.terminalId, "UTF-8"));/* 출발 정류장 */
 		

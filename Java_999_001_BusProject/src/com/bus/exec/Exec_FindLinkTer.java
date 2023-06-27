@@ -36,14 +36,14 @@ public class Exec_FindLinkTer {
 			all_TerList = all_loadserv.goURL_SearchTerminal();
 
 			System.out.println(gwangju_TerList.size());
-			TerminalDto depTerdto = gwangju_TerList.get(7);
+			TerminalDto depTerdto = gwangju_TerList.get(28);
 
 			int count = 0;
 			int findIndex = 0;
 			System.out.println(depTerdto.terminalNm + " 에 연결된 정류장 찾는중 ");
 			for (TerminalDto arrTerdto : all_TerList) {
 				findIndex++;
-				linkTerList = findserv.goURL_SearchTerminal(depTerdto, arrTerdto, "20230626");
+				linkTerList = findserv.goURL_SearchTerminal(depTerdto, arrTerdto, "20230627");
 				System.out.println("찾는 중" + findIndex);
 				if (linkTerList != null) {
 					count++;

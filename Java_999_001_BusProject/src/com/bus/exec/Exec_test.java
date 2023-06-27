@@ -15,17 +15,17 @@ public class Exec_test {
 		
 		TerminalDto depDto = new TerminalDto();
 		depDto.cityName = null;
-		depDto.terminalId = "NAI6119902";
-		depDto.terminalNm = "문화동";
+		depDto.terminalId = "NAI0671801";
+		depDto.terminalNm = "유스퀘어";
 		
 		TerminalDto arrDto = new TerminalDto();
 		arrDto.cityName = null;
-		arrDto.terminalId = "NAI5603501";
-		arrDto.terminalNm = "순창";
+		arrDto.terminalId = "NAI3214401";
+		arrDto.terminalNm = "문화동";
 
 		List<BusDto> busList = new ArrayList<>();
 		try {
-			busList = findserv.goURL_SearchTerminal(depDto, arrDto, "20230626");
+			busList = findserv.goURL_SearchTerminal(depDto, arrDto, "20230627");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -20,7 +20,7 @@ public class Test_SearchAll_Terminal {
 	public List<TerminalDto> goURL_SearchTerminal() throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://apis.data.go.kr/1613000/SuburbsBusInfoService/getSuberbsBusTrminlList"); /* URL */
-		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=57j0OF8PJ75oTqWditc%2Be4vaigu%2BJBAlFoFOuq2x6B3LqcQ4Gl6ITC8QumWD%2Fh3nI8g277R9fRMFcN%2BFWnYeSQ%3D%3D"); /* 서비스 키 */
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + ""); /* 서비스 키 */
 		urlBuilder
 				.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지번호 */
 		urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "="
